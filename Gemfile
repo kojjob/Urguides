@@ -18,6 +18,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'materialize-sass', '~> 0.98.2'
 gem 'material_icons'
 gem "devise"
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
