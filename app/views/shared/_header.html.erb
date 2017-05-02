@@ -1,50 +1,52 @@
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-<li><%= link_to 'My Profile', edit_user_registration_path %></li>
-<li><%= link_to "Trips", root_path %></li>
-<li class="divider"></li>
-<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-</ul>
-<ul id="dropdown2" class="dropdown-content">
-<li><%= link_to 'My Profile', edit_user_registration_path %></li>
-<li><%= link_to "Trips", root_path %></li>
-<li class="divider"></li>
-<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-</ul>
-<nav class="  light-blue accent-3 z-depth-4">
-  <div class="container">
-      <div class="nav-wrapper">
-      <%= link_to "UrGuides", root_path,class: "brand-logo" %>
-      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><%= link_to 'Home', root_path %></li>
-        <li><%= link_to 'About', pages_about_path %></li>
-        <li><%= link_to 'Contact', pages_contact_path %></li>
-        <%if(!user_signed_in?)%>
-          <li><%=link_to 'Login', new_user_session_path %></li>
-          <li><%=link_to 'Sign up', new_user_registration_path %></li>
-        <% else %>
-          <!-- Dropdown Trigger -->
-          <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
-            <div class="chip">
-            </div>
-            <i class="material-icons right"></i></a></li>
-       <% end %>
-        </ul>
-        <ul class="side-nav" id="mobile-demo">
-          <li><a href="sass.html">Products</a></li>
-          <%if(!user_signed_in?)%>
-            <li><%=link_to 'Login', new_user_session_path %></li>
-            <li><%=link_to 'Sign up', new_user_registration_path %></li>
-            <li><a href="collapsible.html">Login</a></li>
-          <% else %>
-          <!-- Dropdown Trigger -->
-        <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown2">
-          <div class="chip">
-          </div>
-          <i class="material-icons right"></i></a></li>
-          <% end %>
-      </ul>
+<header>
+	<!-- Dropdown Structure -->
+	<ul id="dropdown1" class="dropdown-content mask">
+	  <li><%= link_to "My Profile", edit_user_registration_path %></li>
+	  <li><%=  %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+	</ul>
+
+	<ul id="dropdown2" class="dropdown-content mask">
+	  <li><%= link_to "My Profile", edit_user_registration_path %></li>
+	  <li><%=  %></li>
+	  <li class="divider"></li>
+	  <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+	</ul>
+
+	<nav class="light-blue darken-1 z-depth-2">
+		<div class="container">
+	    <div class="nav-wrapper">
+	      <a href="#!" class="brand-logo">UrGuides</a>
+	      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+	      <ul class="right hide-on-med-and-down">
+	        <li><%= link_to "Projects", root_path %></li>
+	        <% if(!user_signed_in?) %>
+		        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+		        <li><%= link_to "Login", new_user_session_path %></li>
+		      <% else%>
+		        <!-- Dropdown Trigger -->
+			      <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown1">
+			      	<%=  %>&nbsp;
+			      	<%=  %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+			      </li>
+		      <% end %>
+
+	      </ul>
+	      <ul class="side-nav" id="mobile-demo">
+	        <li><a href="#">Trips</a></li>
+	        <% if(!user_signed_in?) %>
+		        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+		        <li><%= link_to "Login", new_user_session_path %></li>
+		      <% else%>
+		        <!-- Dropdown Trigger -->
+			      <li><a class="dropdown-button valign-wrapper" href="#!" data-activates="dropdown2">
+				      <%=  %>&nbsp;
+				      <%=  %><i class="mdi-navigation-arrow-drop-down right"></i></a>
+				    </li>
+		      <% end %>
+	      </ul>
+	    </div>
     </div>
-    </div>
-</nav>
+  </nav>
+</header>
