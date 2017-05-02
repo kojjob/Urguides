@@ -1,0 +1,67 @@
+<%= form_for(trip) do |f| %>
+  <% if trip.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(trip.errors.count, "error") %> prohibited this trip from being saved:</h2>
+
+      <ul>
+      <% trip.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :duration %>
+    <%= f.text_field :duration %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price_per_participant %>
+    <%= f.text_field :price_per_participant %>
+  </div>
+
+  <div class="field">
+    <%= f.label :languages %>
+    <%= f.text_field :languages %>
+  </div>
+
+  <div class="field">
+    <%= f.label :group_size %>
+    <%= f.text_field :group_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :transportation %>
+    <%= f.text_field :transportation %>
+  </div>
+
+  <div class="field">
+    <%= f.label :includes %>
+    <%= f.text_area :includes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :exclude %>
+    <%= f.text_area :exclude %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

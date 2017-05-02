@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  resources :trips
   devise_for :users
+  resources :users, only: [:show]
  root 'pages#home'
 
   get 'pages/about'
